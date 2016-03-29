@@ -37,7 +37,7 @@ function(weave files)
         add_custom_command(
             OUTPUT ${path}
             PRE_BUILD
-            COMMAND mkdir -p `dirname "${path}" ` && noweave -x -latex -delay -autodefs c -n "${CMAKE_CURRENT_SOURCE_DIR}/${NW_path}" > "${path}"
+            COMMAND mkdir -p `dirname "${path}" ` && noweave -x -latex -delay -n "${CMAKE_CURRENT_SOURCE_DIR}/${NW_path}" > "${path}"
         )
     endforeach(i)
 endfunction(weave)
